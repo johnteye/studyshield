@@ -12,6 +12,13 @@ module.exports = {
         blue: '#2F82C1',
         toolbar: '#DCF0FC',
         'border-blue' : '#9EC5DC',
+        tabs: '#BDE6FF',
+      },
+      boxShadow: {
+        'even': '0 0 25px 0 rgba(0, 0, 0, 0.25)',
+      },
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
       },
     },
   },
