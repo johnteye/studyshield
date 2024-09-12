@@ -1,8 +1,18 @@
 import React from 'react';
 import background from '../assets/background.png';
 import logo from '../assets/UG.png'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const navigate = useNavigate()
+  const handleLogin = () => {
+    navigate('/login');
+  }
+  const handleWelcome = () =>{
+    navigate('/welcome')
+  }
+
   return (
     <div
       className="h-screen bg-cover bg-center flex flex-col items-center justify-center"
@@ -22,7 +32,7 @@ const Login = () => {
         </div>
         <div className="login h-14 w-3/4 bg-card-blue rounded-full flex items-center justify-between">
           <p className="font-sans ml-20">
-            <button>Login</button>
+            <button onClick={handleLogin}>Login</button>
           </p>
           <div className="h-14 w-1/2 bg-blue rounded-full flex items-center justify-center text-white">
             <p className="font-sans">
@@ -49,9 +59,10 @@ const Login = () => {
             {' '}
             Guest
           </button>
-          <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white">
+          <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white"
+          onClick={handleWelcome}>
             {' '}
-            Login
+            SignUp
           </button>
         </div>
       </div>

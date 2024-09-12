@@ -9,13 +9,19 @@ if (require('electron-squirrel-startup')) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1920,
+    height: 1080,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webviewTag: true
     },
   });
+
+  // if( mainWindow) {
+  //   mainWindow.setFullScreen(true)
+
+  // }
+
 
   // and load the index.html of the app.
   if (MAIN_WINDOW_VITE_DEV_SERVER_URL) {
@@ -50,5 +56,6 @@ app.on('activate', () => {
   }
 });
 
+app.disableHardwareAcceleration();
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.

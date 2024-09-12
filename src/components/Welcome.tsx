@@ -2,9 +2,17 @@ import React from 'react';
 import background from '../assets/background.png';
 import logo from '../assets/UG.png';
 import focus from '../assets/focus.png';
+import { useNavigate } from 'react-router-dom';
 
 const Welcome = () => {
+
+  const navigate = useNavigate()
+  const handleCreateSpace = () => {
+    navigate('/createSpace');
+  }
+
   return (
+
     <div
       className="h-screen bg-cover bg-center flex flex-col items-center justify-center"
       style={{ backgroundImage: `url(${background})` }}
@@ -19,7 +27,7 @@ const Welcome = () => {
 
       <div className="writting space-y-10 flex flex-col items-center">
         <p className="text-gray-800 text-6xl font-bold font-sans">
-          Hi, Matthew !
+          Hi, User !
         </p>
         <p className="font-sans text-2xl font-light text-center text-gray-700 tracking-wide ">
           We’re setting up a <span className='text-blue font-bold'>Space</span> for you. Dive into our web browser to <br />{' '}
@@ -27,7 +35,7 @@ const Welcome = () => {
           <br /> the art of focused break.
         </p>
         <p className='text-blue font-bold tracking-wide font-sans text-2xl'>Let’s transform your Productivity together !</p>
-        <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white">
+        <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white" onClick={handleCreateSpace}>
           {' '}
           Continue
         </button>

@@ -3,9 +3,13 @@ import background from '../assets/background.png';
 import logo from '../assets/UG.png';
 import profile from '../assets/profile_icon.svg'
 import { MdOutlineExpandMore } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
-
+const CreateSpace = () => {
+  const navigate = useNavigate()
+  const handleHomePage = () =>{
+    navigate('/homepage')
+  }
 
   return (
     <div
@@ -50,7 +54,7 @@ const Login = () => {
             {' '}
             Cancel
           </button>
-          <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white">
+          <button className="bg-blue h-14 w-52 rounded-2xl font-sans font-semibold text-xl text-white" onClick={handleHomePage}>
             {' '}
             Create Space
           </button>
@@ -60,4 +64,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateSpace;
