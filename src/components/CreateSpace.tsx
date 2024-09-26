@@ -38,7 +38,7 @@ const CreateSpace = () => {
           <h1 className="text-xl font-semibold text-gray-600 mb-6">
             Pomodoro
           </h1>
-          <input className="rounded-2xl w-4/6 h-28 text-5xl font-semibold text-center text-gray-900 " type="text" placeholder='25:00' />
+          <input className="timer rounded-2xl w-4/6 h-28 text-5xl font-semibold text-center text-gray-900 " type="text" placeholder='MM:SS' />
           <div className="flex bg-white w-3/6 h-14 justify-between items-center rounded-2xl mt-4 px-4">
             <p className='text-sm text-gray-500'>Short break</p>
             <input className="w-1/2 text-center text-lg" type="text" placeholder='5:00'/>

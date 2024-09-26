@@ -9,28 +9,24 @@ import { MdOutlineExpandMore } from "react-icons/md";
 import options from "../assets/more.svg";
 import discovery from "../assets/discovery.svg";
 import { useNavigate } from 'react-router-dom';
+import HomePage from "./HomePage";
 
 const Toolbar = () => {
 
   const navigate = useNavigate()
-  const handleDiscovery = () => {
-    navigate('/discovery');
-  }
-  const handleProfile = () => {
-    navigate('/profile');
-  }
-  const handleHomePage = () => {
-    navigate('/homepage')
-  }
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
 
   const urlInputRef = useRef<HTMLInputElement>(null);
-  const webviewRef = useRef<HTMLIFrameElement>(null);
+  const [inputUrl, setInputUrl] = useState('');
 
   const handleUrl = () => {
-    const inputUrl = urlInputRef.current?.value;
-    if (webviewRef.current && inputUrl) {
-      webviewRef.current.src = inputUrl;
+    const url = urlInputRef.current?.value;
+    if (url) {
+      setInputUrl(url);
     }
+
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -54,7 +50,7 @@ const Toolbar = () => {
           <button id="reload-button" className="text-3xl mb-1">
             &#x21bb;
           </button>
-          <button id="home-button" onClick={handleHomePage}>
+          <button id="home-button" onClick={() => handleNavigate('/homepage')}>
             <TiHome className="text-blue text-2xl" />
           </button>
           <div className="h-10 w-40 bg-white rounded-full flex items-center px-4">
@@ -88,18 +84,19 @@ const Toolbar = () => {
           </div>
         </div>
         <div className="flex items-center justify-center space-x-7 border-l-2 h-6 w-64 border-border-blue ">
-          <img className="h-6 cursor-pointer" src={discovery} onClick={handleDiscovery} />
+          <img className="h-6 cursor-pointer" src={discovery} onClick={() => handleNavigate('/discovery')} />
           <img className="h-5" src={options} />
           <div className="bg-gray-100 rounded-full w-20 flex items-center justify-between pr-2 ">
-            <img className="h-10 cursor-pointer" src={profile}  onClick={handleProfile}/>
+            <img className="h-10 cursor-pointer" src={profile}  onClick={() => handleNavigate('/profile')}/>
             <MdOutlineExpandMore className="text-xl text-blue" />
           </div>
         </div>
       </div>
-      <webview id="webview" ref={webviewRef} src="about:blank" className="h-screen w-screen"/>
-   
+
+      {/* <webview id='webview' src={inputUrl} className="" /> */}
+     
     </div>
   );
-};
+};    
 
 export default Toolbar;
