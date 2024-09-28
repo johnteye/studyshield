@@ -1,7 +1,8 @@
 import './index.css';
 import React, { createContext, useState, ReactNode } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HomePage from './components/HomePage';
+// import HomePage from './components/HomePage';
+import Toolbar from './components/Toolbar';
 import Hero from './components/Hero';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -49,7 +50,7 @@ root.render(
           <Route path="/signup" element={<SignUp />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/createSpace" element={<CreateSpace />} />
-          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/homepage" element={<Toolbar />} />
           <Route path="/discovery" element={<Discovery />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>

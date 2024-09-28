@@ -1,5 +1,4 @@
 import React from 'react';
-import Toolbar from './Toolbar';
 import Habits from '../assets/habits.svg';
 import Einstein from '../assets/Einstein.svg';
 import Chem from '../assets/Chem.svg';
@@ -7,8 +6,7 @@ import Diet from '../assets/Diet.svg';
 
 const Discovery = () => {
   return (
-    <div className="h-screen">
-      <Toolbar />
+    <div className="h-full ">
       <div className="h-full bg-custom-gray  flex p-40 flex-col items-center justify-center">
         <div className="">
           <div className="flex items-center mb-16">

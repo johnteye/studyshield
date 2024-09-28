@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Toolbar from './Toolbar';
 import NewTabs from './NewTabs';
 import { IoIosArrowForward } from "react-icons/io";
 import { RiAccountCircleLine } from "react-icons/ri";
@@ -25,10 +24,10 @@ const Profile = () => {
   ];
 
   return (
-    <div className="h-screen">
-      <Toolbar />
+    <div className="h-full w-screen">
+    
       <NewTabs />
-      <div className="flex h-[83%]">
+      <div className="flex h-[87%] mt-5">
         <div className="h-full w-[351px] border rounded-[40px] shadow-even mt-5 px-4 pt-12 space-y-20">
           {navItems.map(item => (
             <div
